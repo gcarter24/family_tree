@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.11.5'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
+gem 'haml-rails', '~> 2.0', '>= 2.0.1'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 

@@ -1,0 +1,19 @@
+%p{:style => "color: green"}= notice
+= render @person
+%div
+  %h2
+    = @person.full_name
+  %p 
+    Birth Date:
+    = @person.birth_date
+  %p
+    Death Date:
+    = @person.death_date
+  %p
+    Gender:
+    = @person.gender
+  = link_to "Edit this person", edit_person_path(@person)
+  |
+  \#{link_to "Back to people", people_path}
+  
+  \#{button_to "Destroy this person", @person, method: :delete}
