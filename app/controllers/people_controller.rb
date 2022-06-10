@@ -4,6 +4,9 @@ class PeopleController < ApplicationController
   # GET /people or /people.json
   def index
     @people = Person.all.ordered
+    person_params.each do |key, value|
+      @people = @people.public_send("filter_by_#{key}", value) if value.present?
+    end 
   end
 
   # GET /people/1 or /people/1.json
@@ -65,6 +68,6 @@ class PeopleController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def person_params
-      params.fetch(:person, {})
+      params.permit(:first_name)
     end
 end
