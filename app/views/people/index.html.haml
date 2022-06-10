@@ -1,14 +1,14 @@
 %p{:style => "color: green"}= notice
 %h1 People
+= form_tag "/people", method: "GET" do
+  = label_tag :people
+  = text_field_tag :first_name, params[:first_name]
+  = submit_tag "Search"
 #people
-
--# = form_tag "/people", method: "GET" do
--#   = label_tag :people
--#   = text_field_tag :first_name, params[:first_name]
--#   = submit_tag "Search"
-
   - @people.each do |person|
     = render person
     %p
       = link_to person.full_name, person
 = link_to "New person", new_person_path
+
+
